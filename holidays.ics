@@ -1,0 +1,2009 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mehrab Talaei//Persian Calendar 1405-1408//FA
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:تعطیلات رسمی ایران - ساخته شده توس
+ ط محراب طلایی
+X-WR-CALDESC:تعطیلات رسمی ایران ۱۴۰۵ تا ۱۴۰۸ با
+  یادآور شب قبل؛ ساخته شده توسط محراب طلای
+ ی
+X-WR-TIMEZONE:Asia/Tehran
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:holiday-20260321@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:🔴 نوروز و عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 نوروز\n🕌 عید سعید
+  فطر\n\nشمسی: شنبه ۱ فروردین ۱۴۰۵\nقمری: ۱ ش
+ وال ۱۴۴۷\nمیلادی: ۲۱ مارس ۲۰۲۶\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: نوروز، عید سعی
+ د فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260322@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260322
+DTEND;VALUE=DATE:20260323
+SUMMARY:🔴 عید نوروز و تعطیل عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n🕌 تعطی
+ ل عید سعید فطر\n\nشمسی: یک‌شنبه ۲ فروردین 
+ ۱۴۰۵\nقمری: ۲ شوال ۱۴۴۷\nمیلادی: ۲۲ مارس ۲۰
+ ۲۶\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز، تعط
+ یل عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260323@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260323
+DTEND;VALUE=DATE:20260324
+SUMMARY:🔴 عید نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n\nشمسی: 
+ دوشنبه ۳ فروردین ۱۴۰۵\nقمری: ۳ شوال ۱۴۴۷\n
+ میلادی: ۲۳ مارس ۲۰۲۶\n\nساخته شده توسط محر
+ اب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260324@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260324
+DTEND;VALUE=DATE:20260325
+SUMMARY:🔴 عید نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n\nشمسی: 
+ سه‌شنبه ۴ فروردین ۱۴۰۵\nقمری: ۴ شوال ۱۴۴۷
+ \nمیلادی: ۲۴ مارس ۲۰۲۶\n\nساخته شده توسط مح
+ راب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260401@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+SUMMARY:🔴 روز جمهوری اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز جمهوری اسلا
+ می\n\nشمسی: چهارشنبه ۱۲ فروردین ۱۴۰۵\nقمری:
+  ۱۲ شوال ۱۴۴۷\nمیلادی: ۱ آوریل ۲۰۲۶\n\nساخت
+ ه شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز جمهوری اسل
+ امی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260402@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+SUMMARY:🔴 روز طبیعت
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز طبیعت\n\nشمس
+ ی: پنج‌شنبه ۱۳ فروردین ۱۴۰۵\nقمری: ۱۳ شوا
+ ل ۱۴۴۷\nمیلادی: ۲ آوریل ۲۰۲۶\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز طبیعت
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260414@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260414
+DTEND;VALUE=DATE:20260415
+SUMMARY:🔴 شهادت امام جعفر صادق (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام جعفر ص
+ ادق (ع)\n\nشمسی: سه‌شنبه ۲۵ فروردین ۱۴۰۵\nق
+ مری: ۲۵ شوال ۱۴۴۷\nمیلادی: ۱۴ آوریل ۲۰۲۶\n\n
+ ساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام جعف
+ ر صادق (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260527@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY:🔴 عید سعید قربان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید قربان\n\nش
+ مسی: چهارشنبه ۶ خرداد ۱۴۰۵\nقمری: ۱۰ ذی‌ا
+ لحجه ۱۴۴۷\nمیلادی: ۲۷ مه ۲۰۲۶\n\nساخته شده 
+ توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید قربان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260604@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260605
+SUMMARY:🔴 رحلت امام خمینی و عید سعید غدیر خم
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 رحلت امام خمینی
+ \n🕌 عید سعید غدیر خم\n\nشمسی: پنج‌شنبه ۱۴ 
+ خرداد ۱۴۰۵\nقمری: ۱۸ ذی‌الحجه ۱۴۴۷\nمیلاد
+ ی: ۴ ژوئن ۲۰۲۶\n\nساخته شده توسط محراب طلای
+ ی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت امام خمین
+ ی، عید سعید غدیر خم
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260605@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260605
+DTEND;VALUE=DATE:20260606
+SUMMARY:🔴 قیام ۱۵ خرداد
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 قیام ۱۵ خرداد\n\n
+ شمسی: جمعه ۱۵ خرداد ۱۴۰۵\nقمری: ۱۹ ذی‌الح
+ جه ۱۴۴۷\nمیلادی: ۵ ژوئن ۲۰۲۶\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: قیام ۱۵ خرداد
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260624@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+SUMMARY:🔴 تاسوعای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تاسوعای حسینی\n\nش
+ مسی: چهارشنبه ۳ تیر ۱۴۰۵\nقمری: ۹ محرم ۱۴۴
+ ۸\nمیلادی: ۲۴ ژوئن ۲۰۲۶\n\nساخته شده توسط م
+ حراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تاسوعای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260625@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260626
+SUMMARY:🔴 عاشورای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عاشورای حسینی\n\nش
+ مسی: پنج‌شنبه ۴ تیر ۱۴۰۵\nقمری: ۱۰ محرم ۱۴
+ ۴۸\nمیلادی: ۲۵ ژوئن ۲۰۲۶\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عاشورای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260804@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:🔴 اربعین حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 اربعین حسینی\n\nشم
+ سی: سه‌شنبه ۱۳ مرداد ۱۴۰۵\nقمری: ۲۰ صفر ۱۴
+ ۴۸\nمیلادی: ۴ اوت ۲۰۲۶\n\nساخته شده توسط مح
+ راب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: اربعین حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260812@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:🔴 رحلت پیامبر اکرم (ص) و شهادت امام ح
+ سن مجتبی (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 رحلت پیامبر اکرم (
+ ص) و شهادت امام حسن مجتبی (ع)\n\nشمسی: چهارش
+ نبه ۲۱ مرداد ۱۴۰۵\nقمری: ۲۸ صفر ۱۴۴۸\nمیلا
+ دی: ۱۲ اوت ۲۰۲۶\n\nساخته شده توسط محراب طلا
+ یی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت پیامبر اک
+ رم (ص) و شهادت امام حسن مجتبی (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260813@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260814
+SUMMARY:🔴 شهادت امام رضا (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام رضا (ع)\
+ n\nشمسی: پنج‌شنبه ۲۲ مرداد ۱۴۰۵\nقمری: ۲۹ ص
+ فر ۱۴۴۸\nمیلادی: ۱۳ اوت ۲۰۲۶\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام رضا
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260821@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260822
+SUMMARY:🔴 شهادت امام حسن عسکری (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام حسن عس
+ کری (ع)\n\nشمسی: جمعه ۳۰ مرداد ۱۴۰۵\nقمری: ۸ 
+ ربیع‌الاول ۱۴۴۸\nمیلادی: ۲۱ اوت ۲۰۲۶\n\nسا
+ خته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام حسن
+  عسکری (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20260830@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:🔴 میلاد پیامبر اکرم (ص) و امام جعفر ص
+ ادق (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 میلاد پیامبر اکرم
+  (ص) و امام جعفر صادق (ع)\n\nشمسی: یک‌شنبه ۸ 
+ شهریور ۱۴۰۵\nقمری: ۱۷ ربیع‌الاول ۱۴۴۸\nمی
+ لادی: ۳۰ اوت ۲۰۲۶\n\nساخته شده توسط محراب ط
+ لایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: میلاد پیامبر ا
+ کرم (ص) و امام جعفر صادق (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20261113@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:🔴 شهادت حضرت فاطمه زهرا (س)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت فاطمه 
+ زهرا (س)\n\nشمسی: جمعه ۲۲ آبان ۱۴۰۵\nقمری: ۳ 
+ جمادی‌الثانی ۱۴۴۸\nمیلادی: ۱۳ نوامبر ۲۰۲
+ ۶\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت فاط
+ مه زهرا (س)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20261223@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+SUMMARY:🔴 ولادت امام علی (ع) و روز پدر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام علی (ع) 
+ و روز پدر\n\nشمسی: چهارشنبه ۲ دی ۱۴۰۵\nقمری:
+  ۱۳ رجب ۱۴۴۸\nمیلادی: ۲۳ دسامبر ۲۰۲۶\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام علی
+  (ع) و روز پدر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270106@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:🔴 مبعث پیامبر اکرم (ص)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 مبعث پیامبر اکرم (
+ ص)\n\nشمسی: چهارشنبه ۱۶ دی ۱۴۰۵\nقمری: ۲۷ رج
+ ب ۱۴۴۸\nمیلادی: ۶ ژانویه ۲۰۲۷\n\nساخته شده 
+ توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: مبعث پیامبر اک
+ رم (ص)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270124@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:🔴 ولادت امام مهدی (عج)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام مهدی (ع
+ ج)\n\nشمسی: یک‌شنبه ۴ بهمن ۱۴۰۵\nقمری: ۱۵ شع
+ بان ۱۴۴۸\nمیلادی: ۲۴ ژانویه ۲۰۲۷\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام مهد
+ ی (عج)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270211@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270211
+DTEND;VALUE=DATE:20270212
+SUMMARY:🔴 پیروزی انقلاب اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 پیروزی انقلاب ا
+ سلامی\n\nشمسی: پنج‌شنبه ۲۲ بهمن ۱۴۰۵\nقمری
+ : ۴ رمضان ۱۴۴۸\nمیلادی: ۱۱ فوریه ۲۰۲۷\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: پیروزی انقلاب 
+ اسلامی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270228@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270228
+DTEND;VALUE=DATE:20270301
+SUMMARY:🔴 شهادت امام علی (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام علی (ع)\
+ n\nشمسی: یک‌شنبه ۹ اسفند ۱۴۰۵\nقمری: ۲۱ رمض
+ ان ۱۴۴۸\nمیلادی: ۲۸ فوریه ۲۰۲۷\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام علی
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270310@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🔴 عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید فطر\n\nشمس
+ ی: چهارشنبه ۱۹ اسفند ۱۴۰۵\nقمری: ۱ شوال ۱۴
+ ۴۸\nمیلادی: ۱۰ مارس ۲۰۲۷\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270311@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🔴 تعطیل عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تعطیل عید سعید فط
+ ر\n\nشمسی: پنج‌شنبه ۲۰ اسفند ۱۴۰۵\nقمری: ۲ 
+ شوال ۱۴۴۸\nمیلادی: ۱۱ مارس ۲۰۲۷\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تعطیل عید سعید
+  فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270320@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:🔴 روز ملی شدن صنعت نفت
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز ملی شدن صنع
+ ت نفت\n\nشمسی: شنبه ۲۹ اسفند ۱۴۰۵\nقمری: ۱۱ 
+ شوال ۱۴۴۸\nمیلادی: ۲۰ مارس ۲۰۲۷\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز ملی شدن صن
+ عت نفت
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270321@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270322
+SUMMARY:🔴 نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 نوروز\n\nشمسی: یک‌
+ شنبه ۱ فروردین ۱۴۰۶\nقمری: ۱۲ شوال ۱۴۴۸\nم
+ یلادی: ۲۱ مارس ۲۰۲۷\n\nساخته شده توسط محرا
+ ب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270322@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270323
+SUMMARY:🔴 عید نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n\nشمسی: 
+ دوشنبه ۲ فروردین ۱۴۰۶\nقمری: ۱۳ شوال ۱۴۴۸\
+ nمیلادی: ۲۲ مارس ۲۰۲۷\n\nساخته شده توسط محر
+ اب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270323@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270323
+DTEND;VALUE=DATE:20270324
+SUMMARY:🔴 عید نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n\nشمسی: 
+ سه‌شنبه ۳ فروردین ۱۴۰۶\nقمری: ۱۴ شوال ۱۴۴
+ ۸\nمیلادی: ۲۳ مارس ۲۰۲۷\n\nساخته شده توسط م
+ حراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270324@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270324
+DTEND;VALUE=DATE:20270325
+SUMMARY:🔴 عید نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عید نوروز\n\nشمسی: 
+ چهارشنبه ۴ فروردین ۱۴۰۶\nقمری: ۱۵ شوال ۱۴
+ ۴۸\nمیلادی: ۲۴ مارس ۲۰۲۷\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270401@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:🔴 روز جمهوری اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز جمهوری اسلا
+ می\n\nشمسی: پنج‌شنبه ۱۲ فروردین ۱۴۰۶\nقمری
+ : ۲۳ شوال ۱۴۴۸\nمیلادی: ۱ آوریل ۲۰۲۷\n\nساخت
+ ه شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز جمهوری اسل
+ امی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270402@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270402
+DTEND;VALUE=DATE:20270403
+SUMMARY:🔴 روز طبیعت
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز طبیعت\n\nشمس
+ ی: جمعه ۱۳ فروردین ۱۴۰۶\nقمری: ۲۴ شوال ۱۴۴
+ ۸\nمیلادی: ۲ آوریل ۲۰۲۷\n\nساخته شده توسط م
+ حراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز طبیعت
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270403@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:🔴 شهادت امام جعفر صادق (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام جعفر ص
+ ادق (ع)\n\nشمسی: شنبه ۱۴ فروردین ۱۴۰۶\nقمری: 
+ ۲۵ شوال ۱۴۴۸\nمیلادی: ۳ آوریل ۲۰۲۷\n\nساخته
+  شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام جعف
+ ر صادق (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270517@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:🔴 عید سعید قربان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید قربان\n\nش
+ مسی: دوشنبه ۲۷ اردیبهشت ۱۴۰۶\nقمری: ۱۰ ذی
+ ‌الحجه ۱۴۴۸\nمیلادی: ۱۷ مه ۲۰۲۷\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید قربان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270525@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270525
+DTEND;VALUE=DATE:20270526
+SUMMARY:🔴 عید سعید غدیر خم
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید غدیر خم\n\
+ nشمسی: سه‌شنبه ۴ خرداد ۱۴۰۶\nقمری: ۱۸ ذی‌
+ الحجه ۱۴۴۸\nمیلادی: ۲۵ مه ۲۰۲۷\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید غدیر 
+ خم
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270604@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270604
+DTEND;VALUE=DATE:20270605
+SUMMARY:🔴 رحلت امام خمینی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 رحلت امام خمینی
+ \n\nشمسی: جمعه ۱۴ خرداد ۱۴۰۶\nقمری: ۲۸ ذی‌ا
+ لحجه ۱۴۴۸\nمیلادی: ۴ ژوئن ۲۰۲۷\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت امام خمین
+ ی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270605@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:🔴 قیام ۱۵ خرداد
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 قیام ۱۵ خرداد\n\n
+ شمسی: شنبه ۱۵ خرداد ۱۴۰۶\nقمری: ۲۹ ذی‌الح
+ جه ۱۴۴۸\nمیلادی: ۵ ژوئن ۲۰۲۷\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: قیام ۱۵ خرداد
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270615@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270615
+DTEND;VALUE=DATE:20270616
+SUMMARY:🔴 تاسوعای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تاسوعای حسینی\n\nش
+ مسی: سه‌شنبه ۲۵ خرداد ۱۴۰۶\nقمری: ۹ محرم ۱
+ ۴۴۹\nمیلادی: ۱۵ ژوئن ۲۰۲۷\n\nساخته شده توسط
+  محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تاسوعای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270616@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270616
+DTEND;VALUE=DATE:20270617
+SUMMARY:🔴 عاشورای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عاشورای حسینی\n\nش
+ مسی: چهارشنبه ۲۶ خرداد ۱۴۰۶\nقمری: ۱۰ محرم
+  ۱۴۴۹\nمیلادی: ۱۶ ژوئن ۲۰۲۷\n\nساخته شده تو
+ سط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عاشورای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270725@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270725
+DTEND;VALUE=DATE:20270726
+SUMMARY:🔴 اربعین حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 اربعین حسینی\n\nشم
+ سی: یک‌شنبه ۳ مرداد ۱۴۰۶\nقمری: ۲۰ صفر ۱۴۴
+ ۹\nمیلادی: ۲۵ ژوئیه ۲۰۲۷\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: اربعین حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270802@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:🔴 رحلت پیامبر اکرم (ص) و شهادت امام ح
+ سن مجتبی (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 رحلت پیامبر اکرم (
+ ص) و شهادت امام حسن مجتبی (ع)\n\nشمسی: دوشنب
+ ه ۱۱ مرداد ۱۴۰۶\nقمری: ۲۸ صفر ۱۴۴۹\nمیلادی:
+  ۲ اوت ۲۰۲۷\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت پیامبر اک
+ رم (ص) و شهادت امام حسن مجتبی (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270803@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270803
+DTEND;VALUE=DATE:20270804
+SUMMARY:🔴 شهادت امام رضا (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام رضا (ع)\
+ n\nشمسی: سه‌شنبه ۱۲ مرداد ۱۴۰۶\nقمری: ۲۹ صف
+ ر ۱۴۴۹\nمیلادی: ۳ اوت ۲۰۲۷\n\nساخته شده توس
+ ط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام رضا
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270811@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270811
+DTEND;VALUE=DATE:20270812
+SUMMARY:🔴 شهادت امام حسن عسکری (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام حسن عس
+ کری (ع)\n\nشمسی: چهارشنبه ۲۰ مرداد ۱۴۰۶\nقمر
+ ی: ۸ ربیع‌الاول ۱۴۴۹\nمیلادی: ۱۱ اوت ۲۰۲۷\
+ n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام حسن
+  عسکری (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20270820@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20270820
+DTEND;VALUE=DATE:20270821
+SUMMARY:🔴 میلاد پیامبر اکرم (ص) و امام جعفر ص
+ ادق (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 میلاد پیامبر اکرم
+  (ص) و امام جعفر صادق (ع)\n\nشمسی: جمعه ۲۹ مرد
+ اد ۱۴۰۶\nقمری: ۱۷ ربیع‌الاول ۱۴۴۹\nمیلادی
+ : ۲۰ اوت ۲۰۲۷\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: میلاد پیامبر ا
+ کرم (ص) و امام جعفر صادق (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20271103@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20271103
+DTEND;VALUE=DATE:20271104
+SUMMARY:🔴 شهادت حضرت فاطمه زهرا (س)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت فاطمه 
+ زهرا (س)\n\nشمسی: چهارشنبه ۱۲ آبان ۱۴۰۶\nقمر
+ ی: ۳ جمادی‌الثانی ۱۴۴۹\nمیلادی: ۳ نوامبر 
+ ۲۰۲۷\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت فاط
+ مه زهرا (س)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20271212@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20271212
+DTEND;VALUE=DATE:20271213
+SUMMARY:🔴 ولادت امام علی (ع) و روز پدر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام علی (ع) 
+ و روز پدر\n\nشمسی: یک‌شنبه ۲۱ آذر ۱۴۰۶\nقمر
+ ی: ۱۳ رجب ۱۴۴۹\nمیلادی: ۱۲ دسامبر ۲۰۲۷\n\nسا
+ خته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام علی
+  (ع) و روز پدر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20271226@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20271226
+DTEND;VALUE=DATE:20271227
+SUMMARY:🔴 مبعث پیامبر اکرم (ص)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 مبعث پیامبر اکرم (
+ ص)\n\nشمسی: یک‌شنبه ۵ دی ۱۴۰۶\nقمری: ۲۷ رجب 
+ ۱۴۴۹\nمیلادی: ۲۶ دسامبر ۲۰۲۷\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: مبعث پیامبر اک
+ رم (ص)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280113@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280113
+DTEND;VALUE=DATE:20280114
+SUMMARY:🔴 ولادت امام مهدی (عج)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام مهدی (ع
+ ج)\n\nشمسی: پنج‌شنبه ۲۳ دی ۱۴۰۶\nقمری: ۱۵ شع
+ بان ۱۴۴۹\nمیلادی: ۱۳ ژانویه ۲۰۲۸\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام مهد
+ ی (عج)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280211@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280211
+DTEND;VALUE=DATE:20280212
+SUMMARY:🔴 پیروزی انقلاب اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 پیروزی انقلاب ا
+ سلامی\n\nشمسی: جمعه ۲۲ بهمن ۱۴۰۶\nقمری: ۱۴ ر
+ مضان ۱۴۴۹\nمیلادی: ۱۱ فوریه ۲۰۲۸\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: پیروزی انقلاب 
+ اسلامی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280218@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280218
+DTEND;VALUE=DATE:20280219
+SUMMARY:🔴 شهادت امام علی (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام علی (ع)\
+ n\nشمسی: جمعه ۲۹ بهمن ۱۴۰۶\nقمری: ۲۱ رمضان ۱
+ ۴۴۹\nمیلادی: ۱۸ فوریه ۲۰۲۸\n\nساخته شده توس
+ ط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام علی
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280227@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY:🔴 عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید فطر\n\nشمس
+ ی: یک‌شنبه ۸ اسفند ۱۴۰۶\nقمری: ۱ شوال ۱۴۴۹
+ \nمیلادی: ۲۷ فوریه ۲۰۲۸\n\nساخته شده توسط م
+ حراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280228@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280229
+SUMMARY:🔴 تعطیل عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تعطیل عید سعید فط
+ ر\n\nشمسی: دوشنبه ۹ اسفند ۱۴۰۶\nقمری: ۲ شوال
+  ۱۴۴۹\nمیلادی: ۲۸ فوریه ۲۰۲۸\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تعطیل عید سعید
+  فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280319@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280319
+DTEND;VALUE=DATE:20280320
+SUMMARY:🔴 روز ملی شدن صنعت نفت
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز ملی شدن صنع
+ ت نفت\n\nشمسی: یک‌شنبه ۲۹ اسفند ۱۴۰۶\nقمری:
+  ۲۲ شوال ۱۴۴۹\nمیلادی: ۱۹ مارس ۲۰۲۸\n\nساخت
+ ه شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز ملی شدن صن
+ عت نفت
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280320@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY:🔴 جشن نوروز/جشن سال نو
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 جشن نوروز/جشن سال 
+ نو\n\nشمسی: دوشنبه ۱ فروردین ۱۴۰۷\nقمری: ۲۳ 
+ شوال ۱۴۴۹\nمیلادی: ۲۰ مارس ۲۰۲۸\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: جشن نوروز/جشن 
+ سال نو
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280321@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280321
+DTEND;VALUE=DATE:20280322
+SUMMARY:🔴 عیدنوروز و روز جهانی نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n🎉 روز ج
+ هانی نوروز\n\nشمسی: سه‌شنبه ۲ فروردین ۱۴۰
+ ۷\nقمری: ۲۴ شوال ۱۴۴۹\nمیلادی: ۲۱ مارس ۲۰۲۸
+ \n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز، روز 
+ جهانی نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280322@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280322
+DTEND;VALUE=DATE:20280323
+SUMMARY:🔴 عیدنوروز و شهادت امام جعفر صادق عل
+ یه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n🕌 شهاد
+ ت امام جعفر صادق علیه السلام\n\nشمسی: چهار
+ شنبه ۳ فروردین ۱۴۰۷\nقمری: ۲۵ شوال ۱۴۴۹\nم
+ یلادی: ۲۲ مارس ۲۰۲۸\n\nساخته شده توسط محرا
+ ب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز، شها
+ دت امام جعفر صادق علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280323@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280323
+DTEND;VALUE=DATE:20280324
+SUMMARY:🔴 عیدنوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n\nشمسی: پ
+ نج‌شنبه ۴ فروردین ۱۴۰۷\nقمری: ۲۶ شوال ۱۴۴
+ ۹\nمیلادی: ۲۳ مارس ۲۰۲۸\n\nساخته شده توسط م
+ حراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280331@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280331
+DTEND;VALUE=DATE:20280401
+SUMMARY:🔴 روز جمهوری اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز جمهوری اسلا
+ می\n\nشمسی: جمعه ۱۲ فروردین ۱۴۰۷\nقمری: ۴ ذی
+ ‌القعده ۱۴۴۹\nمیلادی: ۳۱ مارس ۲۰۲۸\n\nساخت
+ ه شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز جمهوری اسل
+ امی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280401@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280401
+DTEND;VALUE=DATE:20280402
+SUMMARY:🔴 جشن سیزده به در
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 جشن سیزده به در\n\n
+ شمسی: شنبه ۱۳ فروردین ۱۴۰۷\nقمری: ۵ ذی‌ال
+ قعده ۱۴۴۹\nمیلادی: ۱ آوریل ۲۰۲۸\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: جشن سیزده به د
+ ر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280506@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:🔴 عید سعید قربان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید قربان\n\nش
+ مسی: شنبه ۱۷ اردیبهشت ۱۴۰۷\nقمری: ۱۰ ذی‌ا
+ لحجه ۱۴۴۹\nمیلادی: ۶ مه ۲۰۲۸\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید قربان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280514@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280514
+DTEND;VALUE=DATE:20280515
+SUMMARY:🔴 عید سعید غدیر خم
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید غدیر خم\n\
+ nشمسی: یک‌شنبه ۲۵ اردیبهشت ۱۴۰۷\nقمری: ۱۸ 
+ ذی‌الحجه ۱۴۴۹\nمیلادی: ۱۴ مه ۲۰۲۸\n\nساخته
+  شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید غدیر 
+ خم
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280603@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280603
+DTEND;VALUE=DATE:20280604
+SUMMARY:🔴 رحلت حضرت امام خمینی و تاسوعای حسی
+ نی
+DESCRIPTION:🔴 تعطیل رسمی\n📌 رحلت حضرت امام خم
+ ینی\n🕌 تاسوعای حسینی\n\nشمسی: شنبه ۱۴ خردا
+ د ۱۴۰۷\nقمری: ۹ محرم ۱۴۵۰\nمیلادی: ۳ ژوئن ۲
+ ۰۲۸\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت حضرت امام
+  خمینی، تاسوعای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280604@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280604
+DTEND;VALUE=DATE:20280605
+SUMMARY:🔴 قیام ۱۵ خرداد و عاشورای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 قیام ۱۵ خرداد\n
+ 🕌 عاشورای حسینی\n\nشمسی: یک‌شنبه ۱۵ خردا
+ د ۱۴۰۷\nقمری: ۱۰ محرم ۱۴۵۰\nمیلادی: ۴ ژوئن 
+ ۲۰۲۸\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: قیام ۱۵ خرداد،
+  عاشورای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280714@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280714
+DTEND;VALUE=DATE:20280715
+SUMMARY:🔴 اربعین حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 اربعین حسینی\n\nشم
+ سی: جمعه ۲۴ تیر ۱۴۰۷\nقمری: ۲۰ صفر ۱۴۵۰\nمی
+ لادی: ۱۴ ژوئیه ۲۰۲۸\n\nساخته شده توسط محرا
+ ب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: اربعین حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280722@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:🔴 رحلت رسول اکرم؛ شهادت امام حسن مجت
+ بی علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 رحلت رسول اکرم؛ ش
+ هادت امام حسن مجتبی علیه السلام\n\nشمسی: ش
+ نبه ۱ مرداد ۱۴۰۷\nقمری: ۲۸ صفر ۱۴۵۰\nمیلاد
+ ی: ۲۲ ژوئیه ۲۰۲۸\n\nساخته شده توسط محراب طل
+ ایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت رسول اکرم
+ ؛ شهادت امام حسن مجتبی علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280723@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280723
+DTEND;VALUE=DATE:20280724
+SUMMARY:🔴 شهادت امام رضا (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام رضا (ع)\
+ n\nشمسی: یک‌شنبه ۲ مرداد ۱۴۰۷\nقمری: ۲۹ صفر
+  ۱۴۵۰\nمیلادی: ۲۳ ژوئیه ۲۰۲۸\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام رضا
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280731@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280731
+DTEND;VALUE=DATE:20280801
+SUMMARY:🔴 شهادت امام حسن عسکری علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام حسن عس
+ کری علیه السلام\n\nشمسی: دوشنبه ۱۰ مرداد ۱
+ ۴۰۷\nقمری: ۸ ربیع‌الاول ۱۴۵۰\nمیلادی: ۳۱ ژ
+ وئیه ۲۰۲۸\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام حسن
+  عسکری علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20280809@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20280809
+DTEND;VALUE=DATE:20280810
+SUMMARY:🔴 میلاد رسول اکرم و امام جعفر صادق ع
+ لیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 میلاد رسول اکرم و 
+ امام جعفر صادق علیه السلام\n\nشمسی: چهارشن
+ به ۱۹ مرداد ۱۴۰۷\nقمری: ۱۷ ربیع‌الاول ۱۴۵
+ ۰\nمیلادی: ۹ اوت ۲۰۲۸\n\nساخته شده توسط محر
+ اب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: میلاد رسول اکر
+ م و امام جعفر صادق علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20281022@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20281022
+DTEND;VALUE=DATE:20281023
+SUMMARY:🔴 شهادت حضرت فاطمه زهرا سلام الله عل
+ یها
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت فاطمه 
+ زهرا سلام الله علیها\n\nشمسی: یک‌شنبه ۱ آب
+ ان ۱۴۰۷\nقمری: ۳ جمادی‌الثانی ۱۴۵۰\nمیلاد
+ ی: ۲۲ اکتبر ۲۰۲۸\n\nساخته شده توسط محراب طل
+ ایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت فاط
+ مه زهرا سلام الله علیها
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20281201@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20281201
+DTEND;VALUE=DATE:20281202
+SUMMARY:🔴 ولادت امام علی علیه السلام و روز پ
+ در
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام علی عل
+ یه السلام و روز پدر\n\nشمسی: جمعه ۱۱ آذر ۱۴
+ ۰۷\nقمری: ۱۳ رجب ۱۴۵۰\nمیلادی: ۱ دسامبر ۲۰۲
+ ۸\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام علی
+  علیه السلام و روز پدر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20281215@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20281215
+DTEND;VALUE=DATE:20281216
+SUMMARY:🔴 مبعث رسول اکرم (ص)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 مبعث رسول اکرم (ص)\
+ n\nشمسی: جمعه ۲۵ آذر ۱۴۰۷\nقمری: ۲۷ رجب ۱۴۵۰
+ \nمیلادی: ۱۵ دسامبر ۲۰۲۸\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: مبعث رسول اکرم
+  (ص)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290101@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290101
+DTEND;VALUE=DATE:20290102
+SUMMARY:🔴 ولادت حضرت قائم عجل الله تعالی فرج
+ ه و جشن نیمه شعبان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت حضرت قائم ع
+ جل الله تعالی فرجه و جشن نیمه شعبان\n\nشمس
+ ی: دوشنبه ۱۲ دی ۱۴۰۷\nقمری: ۱۵ شعبان ۱۴۵۰\n
+ میلادی: ۱ ژانویه ۲۰۲۹\n\nساخته شده توسط مح
+ راب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت حضرت قائ
+ م عجل الله تعالی فرجه و جشن نیمه شعبان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290206@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290206
+DTEND;VALUE=DATE:20290207
+SUMMARY:🔴 شهادت حضرت علی علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت علی عل
+ یه السلام\n\nشمسی: سه‌شنبه ۱۸ بهمن ۱۴۰۷\nق
+ مری: ۲۱ رمضان ۱۴۵۰\nمیلادی: ۶ فوریه ۲۰۲۹\n\n
+ ساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت علی
+  علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290210@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290210
+DTEND;VALUE=DATE:20290211
+SUMMARY:🔴 پیروزی انقلاب اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 پیروزی انقلاب ا
+ سلامی\n\nشمسی: شنبه ۲۲ بهمن ۱۴۰۷\nقمری: ۲۵ ر
+ مضان ۱۴۵۰\nمیلادی: ۱۰ فوریه ۲۰۲۹\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: پیروزی انقلاب 
+ اسلامی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290215@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY:🔴 عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید فطر\n\nشمس
+ ی: پنج‌شنبه ۲۷ بهمن ۱۴۰۷\nقمری: ۱ شوال ۱۴۵
+ ۰\nمیلادی: ۱۵ فوریه ۲۰۲۹\n\nساخته شده توسط 
+ محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290216@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290216
+DTEND;VALUE=DATE:20290217
+SUMMARY:🔴 تعطیل به مناسبت عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تعطیل به مناسبت ع
+ ید سعید فطر\n\nشمسی: جمعه ۲۸ بهمن ۱۴۰۷\nقمر
+ ی: ۲ شوال ۱۴۵۰\nمیلادی: ۱۶ فوریه ۲۰۲۹\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تعطیل به مناسب
+ ت عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290311@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290311
+DTEND;VALUE=DATE:20290312
+SUMMARY:🔴 شهادت امام جعفر صادق علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام جعفر ص
+ ادق علیه السلام\n\nشمسی: یک‌شنبه ۲۱ اسفند 
+ ۱۴۰۷\nقمری: ۲۵ شوال ۱۴۵۰\nمیلادی: ۱۱ مارس ۲
+ ۰۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام جعف
+ ر صادق علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290319@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290319
+DTEND;VALUE=DATE:20290320
+SUMMARY:🔴 روز ملی شدن صنعت نفت ایران
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز ملی شدن صنع
+ ت نفت ایران\n\nشمسی: دوشنبه ۲۹ اسفند ۱۴۰۷\n
+ قمری: ۴ ذی‌القعده ۱۴۵۰ (تقریبی)\nمیلادی: ۱
+ ۹ مارس ۲۰۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز ملی شدن صن
+ عت نفت ایران
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290320@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY:🔴 جشن نوروز/جشن سال نو
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 جشن نوروز/جشن سال 
+ نو\n\nشمسی: سه‌شنبه ۱ فروردین ۱۴۰۸\nقمری: ۵
+  ذی‌القعده ۱۴۵۰ (تقریبی)\nمیلادی: ۲۰ مارس 
+ ۲۰۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: جشن نوروز/جشن 
+ سال نو
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290321@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290321
+DTEND;VALUE=DATE:20290322
+SUMMARY:🔴 عیدنوروز و روز جهانی نوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n🎉 روز ج
+ هانی نوروز\n\nشمسی: چهارشنبه ۲ فروردین ۱۴۰
+ ۸\nقمری: ۶ ذی‌القعده ۱۴۵۰ (تقریبی)\nمیلادی
+ : ۲۱ مارس ۲۰۲۹\n\nساخته شده توسط محراب طلای
+ ی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز، روز 
+ جهانی نوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290322@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290322
+DTEND;VALUE=DATE:20290323
+SUMMARY:🔴 عیدنوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n\nشمسی: پ
+ نج‌شنبه ۳ فروردین ۱۴۰۸\nقمری: ۷ ذی‌القعد
+ ه ۱۴۵۰ (تقریبی)\nمیلادی: ۲۲ مارس ۲۰۲۹\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290323@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290323
+DTEND;VALUE=DATE:20290324
+SUMMARY:🔴 عیدنوروز
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 عیدنوروز\n\nشمسی: ج
+ معه ۴ فروردین ۱۴۰۸\nقمری: ۸ ذی‌القعده ۱۴۵
+ ۰ (تقریبی)\nمیلادی: ۲۳ مارس ۲۰۲۹\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عیدنوروز
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290331@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290331
+DTEND;VALUE=DATE:20290401
+SUMMARY:🔴 روز جمهوری اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز جمهوری اسلا
+ می\n\nشمسی: شنبه ۱۲ فروردین ۱۴۰۸\nقمری: ۱۶ ذ
+ ی‌القعده ۱۴۵۰ (تقریبی)\nمیلادی: ۳۱ مارس ۲
+ ۰۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز جمهوری اسل
+ امی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290401@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290401
+DTEND;VALUE=DATE:20290402
+SUMMARY:🔴 جشن سیزده به در
+DESCRIPTION:🔴 تعطیل رسمی\n🎉 جشن سیزده به در\n\n
+ شمسی: یک‌شنبه ۱۳ فروردین ۱۴۰۸\nقمری: ۱۷ ذ
+ ی‌القعده ۱۴۵۰ (تقریبی)\nمیلادی: ۱ آوریل ۲
+ ۰۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: جشن سیزده به د
+ ر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290424@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290424
+DTEND;VALUE=DATE:20290425
+SUMMARY:🔴 عید سعید قربان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید قربان\n\nش
+ مسی: سه‌شنبه ۵ اردیبهشت ۱۴۰۸\nقمری: ۱۰ ذی
+ ‌الحجه ۱۴۵۰ (تقریبی)\nمیلادی: ۲۴ آوریل ۲۰
+ ۲۹\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید قربان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290502@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290502
+DTEND;VALUE=DATE:20290503
+SUMMARY:🔴 عید سعید غدیر خم
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید غدیر خم\n\
+ nشمسی: چهارشنبه ۱۳ اردیبهشت ۱۴۰۸\nقمری: ۱۸
+  ذی‌الحجه ۱۴۵۰ (تقریبی)\nمیلادی: ۲ مه ۲۰۲۹
+ \n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید غدیر 
+ خم
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290523@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290523
+DTEND;VALUE=DATE:20290524
+SUMMARY:🔴 تاسوعای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تاسوعای حسینی\n\nش
+ مسی: چهارشنبه ۳ خرداد ۱۴۰۸\nقمری: ۹ محرم ۱
+ ۴۵۱ (تقریبی)\nمیلادی: ۲۳ مه ۲۰۲۹\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تاسوعای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290524@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290524
+DTEND;VALUE=DATE:20290525
+SUMMARY:🔴 عاشورای حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عاشورای حسینی\n\nش
+ مسی: پنج‌شنبه ۴ خرداد ۱۴۰۸\nقمری: ۱۰ محرم 
+ ۱۴۵۱ (تقریبی)\nمیلادی: ۲۴ مه ۲۰۲۹\n\nساخته ش
+ ده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عاشورای حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290603@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290603
+DTEND;VALUE=DATE:20290604
+SUMMARY:🔴 رحلت حضرت امام خمینی
+DESCRIPTION:🔴 تعطیل رسمی\n📌 رحلت حضرت امام خم
+ ینی\n\nشمسی: یک‌شنبه ۱۴ خرداد ۱۴۰۸\nقمری: ۲
+ ۰ محرم ۱۴۵۱ (تقریبی)\nمیلادی: ۳ ژوئن ۲۰۲۹\n\
+ nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت حضرت امام
+  خمینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290604@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290604
+DTEND;VALUE=DATE:20290605
+SUMMARY:🔴 قیام ۱۵ خرداد
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 قیام ۱۵ خرداد\n\n
+ شمسی: دوشنبه ۱۵ خرداد ۱۴۰۸\nقمری: ۲۱ محرم 
+ ۱۴۵۱ (تقریبی)\nمیلادی: ۴ ژوئن ۲۰۲۹\n\nساخته 
+ شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: قیام ۱۵ خرداد
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290703@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290703
+DTEND;VALUE=DATE:20290704
+SUMMARY:🔴 اربعین حسینی
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 اربعین حسینی\n\nشم
+ سی: سه‌شنبه ۱۳ تیر ۱۴۰۸\nقمری: ۲۰ صفر ۱۴۵۱
+  (تقریبی)\nمیلادی: ۳ ژوئیه ۲۰۲۹\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: اربعین حسینی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290711@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290711
+DTEND;VALUE=DATE:20290712
+SUMMARY:🔴 رحلت رسول اکرم؛ شهادت امام حسن مجت
+ بی علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 رحلت رسول اکرم؛ ش
+ هادت امام حسن مجتبی علیه السلام\n\nشمسی: چ
+ هارشنبه ۲۱ تیر ۱۴۰۸\nقمری: ۲۸ صفر ۱۴۵۱ (تق
+ ریبی)\nمیلادی: ۱۱ ژوئیه ۲۰۲۹\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: رحلت رسول اکرم
+ ؛ شهادت امام حسن مجتبی علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290712@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290712
+DTEND;VALUE=DATE:20290713
+SUMMARY:🔴 شهادت امام رضا (ع)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام رضا (ع)\
+ n\nشمسی: پنج‌شنبه ۲۲ تیر ۱۴۰۸\nقمری: ۲۹ صفر
+  ۱۴۵۱ (تقریبی)\nمیلادی: ۱۲ ژوئیه ۲۰۲۹\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام رضا
+  (ع)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290720@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290720
+DTEND;VALUE=DATE:20290721
+SUMMARY:🔴 شهادت امام حسن عسکری علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام حسن عس
+ کری علیه السلام\n\nشمسی: جمعه ۳۰ تیر ۱۴۰۸\n
+ قمری: ۸ ربیع‌الاول ۱۴۵۱ (تقریبی)\nمیلادی: 
+ ۲۰ ژوئیه ۲۰۲۹\n\nساخته شده توسط محراب طلای
+ ی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام حسن
+  عسکری علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20290729@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20290729
+DTEND;VALUE=DATE:20290730
+SUMMARY:🔴 میلاد رسول اکرم و امام جعفر صادق ع
+ لیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 میلاد رسول اکرم و 
+ امام جعفر صادق علیه السلام\n\nشمسی: یک‌شن
+ به ۸ مرداد ۱۴۰۸\nقمری: ۱۷ ربیع‌الاول ۱۴۵۱
+  (تقریبی)\nمیلادی: ۲۹ ژوئیه ۲۰۲۹\n\nساخته شد
+ ه توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: میلاد رسول اکر
+ م و امام جعفر صادق علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20291012@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20291012
+DTEND;VALUE=DATE:20291013
+SUMMARY:🔴 شهادت حضرت فاطمه زهرا سلام الله عل
+ یها
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت فاطمه 
+ زهرا سلام الله علیها\n\nشمسی: جمعه ۲۱ مهر ۱
+ ۴۰۸\nقمری: ۳ جمادی‌الثانی ۱۴۵۱ (تقریبی)\nم
+ یلادی: ۱۲ اکتبر ۲۰۲۹\n\nساخته شده توسط محر
+ اب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت فاط
+ مه زهرا سلام الله علیها
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20291120@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20291120
+DTEND;VALUE=DATE:20291121
+SUMMARY:🔴 ولادت امام علی علیه السلام و روز پ
+ در
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت امام علی عل
+ یه السلام و روز پدر\n\nشمسی: سه‌شنبه ۳۰ آب
+ ان ۱۴۰۸\nقمری: ۱۳ رجب ۱۴۵۱ (تقریبی)\nمیلادی
+ : ۲۰ نوامبر ۲۰۲۹\n\nساخته شده توسط محراب طل
+ ایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت امام علی
+  علیه السلام و روز پدر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20291204@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:🔴 مبعث رسول اکرم (ص)
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 مبعث رسول اکرم (ص)\
+ n\nشمسی: سه‌شنبه ۱۴ آذر ۱۴۰۸\nقمری: ۲۷ رجب 
+ ۱۴۵۱ (تقریبی)\nمیلادی: ۴ دسامبر ۲۰۲۹\n\nساخ
+ ته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: مبعث رسول اکرم
+  (ص)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20291222@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:🔴 ولادت حضرت قائم عجل الله تعالی فرج
+ ه و جشن نیمه شعبان
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 ولادت حضرت قائم ع
+ جل الله تعالی فرجه و جشن نیمه شعبان\n\nشمس
+ ی: شنبه ۲ دی ۱۴۰۸\nقمری: ۱۵ شعبان ۱۴۵۱ (تقر
+ یبی)\nمیلادی: ۲۲ دسامبر ۲۰۲۹\n\nساخته شده ت
+ وسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: ولادت حضرت قائ
+ م عجل الله تعالی فرجه و جشن نیمه شعبان
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300126@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300126
+DTEND;VALUE=DATE:20300127
+SUMMARY:🔴 شهادت حضرت علی علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت حضرت علی عل
+ یه السلام\n\nشمسی: شنبه ۷ بهمن ۱۴۰۸\nقمری: ۲
+ ۱ رمضان ۱۴۵۱ (تقریبی)\nمیلادی: ۲۶ ژانویه ۲
+ ۰۳۰\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت حضرت علی
+  علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300205@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY:🔴 عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 عید سعید فطر\n\nشمس
+ ی: سه‌شنبه ۱۷ بهمن ۱۴۰۸\nقمری: ۱ شوال ۱۴۵۱
+  (تقریبی)\nمیلادی: ۵ فوریه ۲۰۳۰\n\nساخته شده
+  توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300206@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300206
+DTEND;VALUE=DATE:20300207
+SUMMARY:🔴 تعطیل به مناسبت عید سعید فطر
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 تعطیل به مناسبت ع
+ ید سعید فطر\n\nشمسی: چهارشنبه ۱۸ بهمن ۱۴۰۸\
+ nقمری: ۲ شوال ۱۴۵۱ (تقریبی)\nمیلادی: ۶ فوری
+ ه ۲۰۳۰\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: تعطیل به مناسب
+ ت عید سعید فطر
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300210@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300210
+DTEND;VALUE=DATE:20300211
+SUMMARY:🔴 پیروزی انقلاب اسلامی
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 پیروزی انقلاب ا
+ سلامی\n\nشمسی: یک‌شنبه ۲۲ بهمن ۱۴۰۸\nقمری: 
+ ۶ شوال ۱۴۵۱ (تقریبی)\nمیلادی: ۱۰ فوریه ۲۰۳
+ ۰\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: پیروزی انقلاب 
+ اسلامی
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300301@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300301
+DTEND;VALUE=DATE:20300302
+SUMMARY:🔴 شهادت امام جعفر صادق علیه السلام
+DESCRIPTION:🔴 تعطیل رسمی\n🕌 شهادت امام جعفر ص
+ ادق علیه السلام\n\nشمسی: جمعه ۱۱ اسفند ۱۴۰
+ ۸\nقمری: ۲۵ شوال ۱۴۵۱ (تقریبی)\nمیلادی: ۱ ما
+ رس ۲۰۳۰\n\nساخته شده توسط محراب طلایی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: شهادت امام جعف
+ ر صادق علیه السلام
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-20300319@mehrab-talaei
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20300319
+DTEND;VALUE=DATE:20300320
+SUMMARY:🔴 روز ملی شدن صنعت نفت ایران
+DESCRIPTION:🔴 تعطیل رسمی\n🇮🇷 روز ملی شدن صنع
+ ت نفت ایران\n\nشمسی: سه‌شنبه ۲۹ اسفند ۱۴۰۸
+ \nقمری: ۱۴ ذی‌القعده ۱۴۵۱ (تقریبی)\nمیلادی
+ : ۱۹ مارس ۲۰۳۰\n\nساخته شده توسط محراب طلای
+ ی
+CATEGORIES:تعطیل رسمی
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT4H
+DESCRIPTION:فردا تعطیل رسمی است: روز ملی شدن صن
+ عت نفت ایران
+END:VALARM
+END:VEVENT
+END:VCALENDAR
