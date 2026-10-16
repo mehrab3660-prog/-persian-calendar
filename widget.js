@@ -83,6 +83,9 @@ function describe(days, today) {
     weekday,
     // Weekday-only events mean "no occasion"
     occasion: occasion && occasion.title !== weekday ? occasion.title : null,
+    // the occasion itself is an official holiday (red occasion text)
+    occasionHoliday: Boolean(occasion && occasion.holiday),
+    // the date is red on official holidays and Fridays
     holiday: Boolean(occasion && occasion.holiday) || today.getDay() === 5,
     next: nextHoliday(days, today),
   };
@@ -168,7 +171,7 @@ function buildWidget(info, family) {
   details.layoutVertically();
   if (info.occasion) {
     addLine(details, "مناسبت امروز", 11, muted);
-    const occasion = addLine(details, info.occasion, 15, info.holiday ? red : text, true);
+    const occasion = addLine(details, info.occasion, 15, info.occasionHoliday ? red : text, true);
     occasion.lineLimit = 2;
     details.addSpacer(8);
   }
