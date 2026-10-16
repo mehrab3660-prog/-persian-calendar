@@ -2,10 +2,8 @@
 
 Usage: python3 build_calendar.py SOURCE.ics OUTPUT_DIR
 
-Writes three calendars to OUTPUT_DIR:
-  calendar.ics       dates (Jalali, Hijri, Gregorian) and the main occasions
-  calendar-full.ics  the same, plus every birthday, death and historical event
-  holidays.ics       official holidays only
+Writes OUTPUT_DIR/calendar.ics: Jalali, Hijri and Gregorian dates, every occasion,
+official holidays and reminders.
 """
 import datetime
 import math
@@ -339,7 +337,7 @@ def emoji(item):
 
 
 def is_minor(item):
-    """Birthdays, deaths and historical events: kept only in the full calendar."""
+    """Birthdays, deaths and historical events: listed, but not used in titles first."""
     return emoji(item) in ("🕯️", "🎂", "📌")
 
 
@@ -409,7 +407,7 @@ def build(src, out_dir):
     days, hijri = collect(src)
     first, last = g2j(*min(days).timetuple()[:3])[0], g2j(*max(days).timetuple()[:3])[0]
     signature = "ساخته شده توسط " + AUTHOR
-    main, full, holidays_only = [], [], []
+    events = []
     stats = {}
     for day, all_items in sorted(days.items()):
         key = day.strftime("%Y%m%d")
@@ -429,58 +427,40 @@ def build(src, out_dir):
         date_summary = "\u2067%d %s · %d %s\u2069" % (jd, MONTHS[jm - 1], hd, HIJRI_MONTHS[hm - 1])
         date_event = event("jalali-date-" + key, day, date_summary, date_desc)
 
-        for full_version, target in ((False, main), (True, full)):
-            items = all_items if full_version else [i for i in all_items if i in holiday or not is_minor(i)]
-            ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i)))
-            top = [i for i in ranked if i in holiday or not is_minor(i)][:2] or ranked[:1]
-            if len(top) == 2 and len(top[0]) + len(top[1]) > 60:
-                top = top[:1]
-            title = ("🔴 " if holiday else "") + weekday
-            if top:
-                title += " - " + " و ".join(emoji(i) + " " + i for i in top)
-            if items:
-                desc = ("🔴 تعطیل رسمی\n" if holiday else "") + "مناسبت‌های این روز:\n"
-                desc += "\n".join(emoji(i) + " " + i for i in items)
-            else:
-                desc = "مناسبت ثبت‌شده‌ای برای این روز وجود ندارد."
-            if approx and any(is_lunar(i) for i in items):
-                desc += "\n\nتاریخ مناسبت‌های قمری این سال تقریبی است و ممکن است یک روز جابه‌جا شود."
-            desc += "\n\n" + signature
-            alarms = []
-            if holiday:
-                alarms.append(alarm("-PT4H", "فردا تعطیل رسمی است: " + "، ".join(holiday)))
-            ahead = [i for i in items if REMIND_AHEAD.search(i)]
-            if ahead:
-                alarms.append(alarm("-P2DT15H", "سه روز دیگر: " + "، ".join(ahead)))
-            target += date_event
-            target += event("jalali-info-" + key, day, title, desc,
-                            "تعطیل رسمی" if holiday else None, alarms)
-
+        items = all_items
+        ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i)))
+        top = [i for i in ranked if i in holiday or not is_minor(i)][:2] or ranked[:1]
+        if len(top) == 2 and len(top[0]) + len(top[1]) > 60:
+            top = top[:1]
+        title = ("🔴 " if holiday else "") + weekday
+        if top:
+            title += " - " + " و ".join(emoji(i) + " " + i for i in top)
+        if items:
+            desc = ("🔴 تعطیل رسمی\n" if holiday else "") + "مناسبت‌های این روز:\n"
+            desc += "\n".join(emoji(i) + " " + i for i in items)
+        else:
+            desc = "مناسبت ثبت‌شده‌ای برای این روز وجود ندارد."
+        if approx and any(is_lunar(i) for i in items):
+            desc += "\n\nتاریخ مناسبت‌های قمری این سال تقریبی است و ممکن است یک روز جابه‌جا شود."
+        desc += "\n\n" + signature
+        alarms = []
         if holiday:
-            desc = "🔴 تعطیل رسمی\n" + "\n".join(emoji(i) + " " + i for i in holiday)
-            desc += "\n\n" + date_desc
-            holidays_only += event("holiday-" + key, day, "🔴 " + " و ".join(holiday), desc, "تعطیل رسمی",
-                                   [alarm("-PT4H", "فردا تعطیل رسمی است: " + "، ".join(holiday))])
+            alarms.append(alarm("-PT4H", "فردا تعطیل رسمی است: " + "، ".join(holiday)))
+        ahead = [i for i in items if REMIND_AHEAD.search(i)]
+        if ahead:
+            alarms.append(alarm("-P2DT15H", "سه روز دیگر: " + "، ".join(ahead)))
+        events += date_event
+        events += event("jalali-info-" + key, day, title, desc,
+                        "تعطیل رسمی" if holiday else None, alarms)
 
     years = (first, last)
-    span = "%d تا %d" % years
-    files = {
-        "calendar.ics": calendar(
-            "تقویم شمسی - ساخته شده توسط " + AUTHOR,
-            "تقویم شمسی روزانه %s با تاریخ قمری و میلادی، مناسبت‌ها، تعطیلات رسمی و یادآورها؛ %s" % (span, signature),
-            main, years),
-        "calendar-full.ics": calendar(
-            "تقویم شمسی کامل - ساخته شده توسط " + AUTHOR,
-            "تقویم شمسی روزانه %s با همه‌ی مناسبت‌ها، زادروزها و رویدادهای تاریخی؛ %s" % (span, signature),
-            full, years),
-        "holidays.ics": calendar(
-            "تعطیلات رسمی ایران - ساخته شده توسط " + AUTHOR,
-            "تعطیلات رسمی ایران %s با یادآور شب قبل؛ %s" % (span, signature),
-            holidays_only, years),
-    }
-    for name, text in files.items():
-        with open(os.path.join(out_dir, name), "w", encoding="utf-8", newline="") as f:
-            f.write(text)
+    text = calendar(
+        "تقویم شمسی - ساخته شده توسط " + AUTHOR,
+        "تقویم شمسی روزانه %d تا %d با تاریخ قمری و میلادی، همه‌ی مناسبت‌ها، تعطیلات رسمی و یادآورها؛ %s"
+        % (first, last, signature),
+        events, years)
+    with open(os.path.join(out_dir, "calendar.ics"), "w", encoding="utf-8", newline="") as f:
+        f.write(text)
     return stats
 
 
