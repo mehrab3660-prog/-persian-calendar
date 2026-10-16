@@ -95,6 +95,10 @@ function describeDate(days, today) {
 async function loadCalendar() {
   const fm = FileManager.local();
   const path = fm.joinPath(fm.documentsDirectory(), CACHE_FILE);
+  // The calendar rarely changes: reuse the saved copy for 12 hours so each refresh stays fast
+  if (fm.fileExists(path) && Date.now() - fm.modificationDate(path).getTime() < 12 * 3600 * 1000) {
+    return parseCalendar(fm.readString(path));
+  }
   try {
     const request = new Request(CALENDAR_URL);
     request.timeoutInterval = 15;
@@ -179,20 +183,26 @@ const SERVICES = [
   },
 ];
 
-async function lookup() {
-  for (const service of SERVICES) {
-    try {
-      const request = new Request(service.url);
-      request.timeoutInterval = 6;
-      const started = Date.now();
-      const body = service.text ? await request.loadString() : await request.loadJSON();
-      const result = service.parse(body);
-      if (result) return { ...result, ping: Date.now() - started };
-    } catch (e) {
-      // try the next service
+async function ask(service) {
+  const request = new Request(service.url);
+  request.timeoutInterval = 4;
+  const started = Date.now();
+  const body = service.text ? await request.loadString() : await request.loadJSON();
+  const result = service.parse(body);
+  if (!result) throw new Error("no answer");
+  return { ...result, ping: Date.now() - started };
+}
+
+// All services at once; the first good answer wins, so a blocked service costs no time
+function lookup() {
+  return new Promise((resolve) => {
+    let pending = SERVICES.length;
+    for (const service of SERVICES) {
+      ask(service).then(resolve, () => {
+        if (--pending === 0) resolve(null);
+      });
     }
-  }
-  return null;
+  });
 }
 
 
@@ -271,6 +281,56 @@ function ringImage(fraction, color, label, size, textColor, trackColor) {
   return dc.getImage();
 }
 
+// A battery icon: outlined body, coloured fill with a glossy top, terminal nub and label
+function batteryImage(fraction, color, label, width, height) {
+  const dc = new DrawContext();
+  dc.size = new Size(width, height);
+  dc.opaque = false;
+  dc.respectScreenScale = true;
+  const line = Math.max(2, height * 0.07);
+  const nub = width * 0.06;
+  const bodyWidth = width - nub - line;
+  const outline = new Color("#ffffff", 0.55);
+
+  const body = new Path();
+  body.addRoundedRect(new Rect(line / 2, line / 2, bodyWidth - line, height - line), height * 0.22, height * 0.22);
+  dc.addPath(body);
+  dc.setStrokeColor(outline);
+  dc.setLineWidth(line);
+  dc.strokePath();
+
+  const pad = line * 1.6;
+  const innerHeight = height - 2 * pad;
+  const innerWidth = (bodyWidth - 2 * pad) * Math.max(0.04, Math.min(fraction, 1));
+  const fill = new Path();
+  fill.addRoundedRect(new Rect(pad, pad, innerWidth, innerHeight), height * 0.14, height * 0.14);
+  dc.addPath(fill);
+  dc.setFillColor(new Color(color));
+  dc.fillPath();
+  const gloss = new Path();
+  gloss.addRoundedRect(new Rect(pad, pad, innerWidth, innerHeight * 0.45), height * 0.14, height * 0.14);
+  dc.addPath(gloss);
+  dc.setFillColor(new Color("#ffffff", 0.22));
+  dc.fillPath();
+
+  const terminal = new Path();
+  terminal.addRoundedRect(new Rect(bodyWidth + line * 0.3, height * 0.32, nub, height * 0.36), nub / 2, nub / 2);
+  dc.addPath(terminal);
+  dc.setFillColor(outline);
+  dc.fillPath();
+
+  if (label) {
+    dc.setFont(Font.heavyRoundedSystemFont(height * 0.44));
+    dc.setTextAlignedCenter();
+    // a soft shadow keeps the label readable on any fill
+    dc.setTextColor(new Color("#000000", 0.35));
+    dc.drawTextInRect(label, new Rect(1, height * 0.24 + 1, bodyWidth, height * 0.56));
+    dc.setTextColor(WHITE);
+    dc.drawTextInRect(label, new Rect(0, height * 0.24, bodyWidth, height * 0.56));
+  }
+  return dc.getImage();
+}
+
 // ---------- ویجت ----------
 
 const WHITE = new Color("#ffffff");
@@ -346,8 +406,11 @@ function buildWidget(date, battery, vpn, family) {
     widget.setPadding(12, 12, 12, 12);
     const top = widget.addStack();
     top.centerAlignContent();
-    const ring = top.addImage(ringImage(battery.level / 100, battery.color, fa(battery.level), 72, WHITE, FAINT));
-    ring.imageSize = new Size(36, 36);
+    const batteryStack = top.addStack();
+    batteryStack.layoutVertically();
+    const icon = batteryStack.addImage(batteryImage(battery.level / 100, battery.color, "", 88, 42));
+    icon.imageSize = new Size(44, 21);
+    addLine(batteryStack, `${battery.charging ? "⚡" : ""}${battery.text}`, 12, WHITE, true);
     top.addSpacer();
     const titles = top.addStack();
     titles.layoutVertically();
@@ -367,7 +430,7 @@ function buildWidget(date, battery, vpn, family) {
     return widget;
   }
 
-  // medium and large: battery ring on the left, the date on the right, capsules below
+  // medium and large: the battery on the left, the date on the right, capsules below
   const large = family === "large";
   widget.setPadding(14, 16, 14, 16);
   const row = widget.addStack();
@@ -375,12 +438,14 @@ function buildWidget(date, battery, vpn, family) {
   const left = row.addStack();
   left.layoutVertically();
   left.centerAlignContent();
-  const ringSize = large ? 108 : 82;
-  const ring = left.addImage(ringImage(battery.level / 100, battery.color, battery.text, ringSize * 2, WHITE, FAINT));
-  ring.imageSize = new Size(ringSize, ringSize);
-  left.addSpacer(4);
+  const iconWidth = large ? 130 : 110;
+  const iconHeight = Math.round(iconWidth * 0.46);
+  const icon = left.addImage(batteryImage(battery.level / 100, battery.color,
+    `${battery.charging ? "⚡" : ""}${battery.text}`, iconWidth * 2, iconHeight * 2));
+  icon.imageSize = new Size(iconWidth, iconHeight);
+  left.addSpacer(6);
   const hint = left.addStack();
-  hint.size = new Size(ringSize, 0);
+  hint.size = new Size(iconWidth, 0);
   addLine(hint, battery.hint, 10, battery.level <= 20 && !battery.charging ? CORAL : SOFT).centerAlignText();
   row.addSpacer();
   const right = row.addStack();
@@ -425,8 +490,8 @@ async function main() {
   const [days, result] = await Promise.all([loadCalendar(), lookup()]);
   const widget = buildWidget(describeDate(days, today), describeBattery(), describeVpn(result),
     config.widgetFamily || "medium");
-  // Every few minutes for battery and VPN; iOS decides the exact moment
-  widget.refreshAfterDate = new Date(Date.now() + 5 * 60 * 1000);
+  // Ask for a redraw after a minute; iOS decides the real moment from its daily budget
+  widget.refreshAfterDate = new Date(Date.now() + 60 * 1000);
   if (config.runsInWidget) Script.setWidget(widget);
   else await widget.presentMedium();
   Script.complete();
