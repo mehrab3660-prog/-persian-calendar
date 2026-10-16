@@ -100,11 +100,11 @@ REMIND_AHEAD = re.compile(r"روز مادر|روز پدر(?! \()|یلدا|چها
 
 TYPES = [  # (emoji, pattern), first match wins
     ("🕌", None),  # lunar occasions
-    ("🎉", re.compile(r"جشن|نوروز|سال نو|یلدا|سده|مهرگان|تیرگان|سیزده|سوری|سپندارمذگان|آبانگان|آذرگان")),
-    ("🌍", re.compile(r"جهانی|بین\u200c?المللی|بین المللی")),
-    ("🇮🇷", re.compile(r"^روز|پیروزی|قیام|رحلت امام خمینی|ملی")),
+    ("🎉", re.compile(r"جشن(?!واره)|نوروز|سال نو|یلدا|سده|مهرگان|تیرگان|سیزده|سوری|سپندارمذگان|آبانگان|آذرگان")),
     ("🕯️", re.compile(r"^درگذشت")),
     ("🎂", re.compile(r"^(زادروز|زاد روز|تولد)")),
+    ("🌍", re.compile(r"جهانی|بین\u200c?المللی|بین المللی")),
+    ("🇮🇷", re.compile(r"^روز|پیروزی|قیام|رحلت امام خمینی")),
 ]
 
 
@@ -341,6 +341,29 @@ def is_minor(item):
     return emoji(item) in ("🕯️", "🎂", "📌")
 
 
+HONORIFICS = re.compile(r"\s*(\((ع|س|ص|عج)\)|علیه السلام|علیهاالسلام|سلام الله علیها|عجل الله تعالی فرجه( الشریف)?)")
+
+
+def short_title(item, holiday=False):
+    """A short title for the narrow month view; the description keeps the full text.
+
+    The mark goes last: the month view shows the end of a Persian title and cuts its start.
+    """
+    mark = "🔴" if holiday else emoji(item)
+    text = HONORIFICS.sub("", item)
+    parts = [p.strip() for p in re.split(r"[،؛(:]", text) if p.strip()]
+    text = next((p for p in parts if p.startswith("جشن")), parts[0])  # the name, not its explanation
+    if len(text) > 20 and " و " in text:
+        text = text.split(" و ")[0]
+    text = re.sub(r"^(روز (جهانی|بین\u200c?المللی|بین المللی|ملی)|روزجهانی|روز بزرگداشت|بزرگداشت"
+                  r"|روز|زادروز|زاد روز|درگذشت|تولد)\s+", "", text)
+    if mark in ("🕯️", "🎂"):
+        text = " ".join(text.split()[:3])
+    elif len(text) > 22:
+        text = " ".join(text.split()[:4])
+    return text.strip() + " " + mark
+
+
 def escape(text):
     return (text.replace("\\", "\\\\").replace(";", "\\;")
             .replace(",", "\\,").replace("\n", "\\n"))
@@ -432,10 +455,10 @@ def build(src, out_dir):
         items = all_items
         if not items:
             continue
-        ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i)))
+        ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i), emoji(i) == "🌍"))
         # One occasion only, and the holiday mark at the end: the month view shows
         # the end of a Persian title and cuts its start
-        title = ranked[0] + (" 🔴" if holiday else "")
+        title = short_title(ranked[0], ranked[0] in holiday)
         desc = ("🔴 تعطیل رسمی\n" if holiday else "") + "مناسبت‌های این روز:\n"
         desc += "\n".join(emoji(i) + " " + i for i in items)
         if approx and any(is_lunar(i) for i in items):
