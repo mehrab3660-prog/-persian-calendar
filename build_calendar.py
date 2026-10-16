@@ -424,22 +424,20 @@ def build(src, out_dir):
             "قمری: " + hijri_text,
             "میلادی: %d %s %d" % (day.day, GREGORIAN_MONTHS[day.month - 1], day.year),
             "", signature])
-        date_summary = "\u2067%d %s · %d %s\u2069" % (jd, MONTHS[jm - 1], hd, HIJRI_MONTHS[hm - 1])
+        # Month view cells are narrow and cut Persian titles from the start: keep it short
+        date_summary = "\u2067%d %s\u2069" % (jd, MONTHS[jm - 1])
         date_event = event("jalali-date-" + key, day, date_summary, date_desc)
 
+        events += date_event
         items = all_items
+        if not items:
+            continue
         ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i)))
-        top = [i for i in ranked if i in holiday or not is_minor(i)][:2] or ranked[:1]
-        if len(top) == 2 and len(top[0]) + len(top[1]) > 60:
-            top = top[:1]
-        title = ("🔴 " if holiday else "") + weekday
-        if top:
-            title += " - " + " و ".join(emoji(i) + " " + i for i in top)
-        if items:
-            desc = ("🔴 تعطیل رسمی\n" if holiday else "") + "مناسبت‌های این روز:\n"
-            desc += "\n".join(emoji(i) + " " + i for i in items)
-        else:
-            desc = "مناسبت ثبت‌شده‌ای برای این روز وجود ندارد."
+        # One occasion only, and the holiday mark at the end: the month view shows
+        # the end of a Persian title and cuts its start
+        title = ranked[0] + (" 🔴" if holiday else "")
+        desc = ("🔴 تعطیل رسمی\n" if holiday else "") + "مناسبت‌های این روز:\n"
+        desc += "\n".join(emoji(i) + " " + i for i in items)
         if approx and any(is_lunar(i) for i in items):
             desc += "\n\nتاریخ مناسبت‌های قمری این سال تقریبی است و ممکن است یک روز جابه‌جا شود."
         desc += "\n\n" + signature
@@ -449,7 +447,6 @@ def build(src, out_dir):
         ahead = [i for i in items if REMIND_AHEAD.search(i)]
         if ahead:
             alarms.append(alarm("-P2DT15H", "سه روز دیگر: " + "، ".join(ahead)))
-        events += date_event
         events += event("jalali-info-" + key, day, title, desc,
                         "تعطیل رسمی" if holiday else None, alarms)
 
