@@ -357,6 +357,7 @@ def short_title(item, holiday=False):
         text = text.split(" و ")[0]
     text = re.sub(r"^(روز (جهانی|بین\u200c?المللی|بین المللی|ملی)|روزجهانی|روز بزرگداشت|بزرگداشت"
                   r"|روز|زادروز|زاد روز|درگذشت|تولد)\s+", "", text)
+    text = text.split(" و روز ")[0]  # "روز مادر و روز زن" -> "مادر"
     if mark in ("🕯️", "🎂"):
         text = " ".join(text.split()[:3])
     elif len(text) > 22:
