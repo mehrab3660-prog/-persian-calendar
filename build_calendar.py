@@ -451,7 +451,9 @@ def build(src, out_dir):
         events += event("jalali-date-" + key, day, "\u2067%d %s\u2069" % (jd, MONTHS[jm - 1]),
                         date_desc + "\n\n" + signature)
         items = all_items
-        if not items:
+        if not items:  # like the Iranian calendar: a day without occasions shows its weekday
+            events += event("jalali-info-" + key, day, weekday,
+                            "مناسبت ثبت‌شده‌ای برای این روز وجود ندارد.\n\n" + date_desc + "\n\n" + signature)
             continue
         ranked = sorted(items, key=lambda i: (i not in holiday, is_minor(i), emoji(i) == "🌍"))
         # One occasion only, and the holiday mark at the end: the month view shows
