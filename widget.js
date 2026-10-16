@@ -154,13 +154,14 @@ function buildWidget(info, family) {
   widget.setPadding(14, 14, 14, 14);
 
   if (family === "small") {
-    addLine(widget, info.weekday, 15, dayColor, true).rightAlignText();
-    const day = addLine(widget, info.day, 46, dayColor, true);
-    day.rightAlignText();
-    addLine(widget, `${info.month} ${info.year}`, 14, muted).rightAlignText();
+    // everything centred, the date in the middle of the widget
     widget.addSpacer();
-    if (info.occasion) addLine(widget, info.occasion, 12, text).rightAlignText();
-    else if (nextText) addLine(widget, nextText, 12, muted).rightAlignText();
+    addLine(widget, info.weekday, 15, dayColor, true).centerAlignText();
+    addLine(widget, info.day, 50, dayColor, true).centerAlignText();
+    addLine(widget, `${info.month} ${info.year}`, 14, muted).centerAlignText();
+    widget.addSpacer();
+    if (info.occasion) addLine(widget, info.occasion, 12, info.occasionHoliday ? red : text).centerAlignText();
+    else if (nextText) addLine(widget, nextText, 12, muted).centerAlignText();
     return widget;
   }
 
