@@ -2,8 +2,8 @@
 
 Usage: python3 build_calendar.py SOURCE.ics OUTPUT_DIR
 
-Writes OUTPUT_DIR/calendar.ics: Jalali, Hijri and Gregorian dates, every occasion,
-official holidays and reminders.
+Writes OUTPUT_DIR/calendar.ics: every occasion (with its Jalali, Hijri and Gregorian
+date), official holidays and reminders.
 """
 import datetime
 import math
@@ -443,16 +443,11 @@ def build(src, out_dir):
         stats[jy] = stats.get(jy, 0) + bool(holiday)
 
         hijri_text = "%d %s %d%s" % (hd, HIJRI_MONTHS[hm - 1], hy, " (تقریبی)" if approx else "")
+        # No event for the date itself: the phone's own calendar setting shows Jalali dates
         date_desc = "\n".join([
             "شمسی: %s %d %s %d" % (weekday, jd, MONTHS[jm - 1], jy),
             "قمری: " + hijri_text,
-            "میلادی: %d %s %d" % (day.day, GREGORIAN_MONTHS[day.month - 1], day.year),
-            "", signature])
-        # Month view cells are narrow and cut Persian titles from the start: keep it short
-        date_summary = "\u2067%d %s\u2069" % (jd, MONTHS[jm - 1])
-        date_event = event("jalali-date-" + key, day, date_summary, date_desc)
-
-        events += date_event
+            "میلادی: %d %s %d" % (day.day, GREGORIAN_MONTHS[day.month - 1], day.year)])
         items = all_items
         if not items:
             continue
@@ -464,7 +459,7 @@ def build(src, out_dir):
         desc += "\n".join(emoji(i) + " " + i for i in items)
         if approx and any(is_lunar(i) for i in items):
             desc += "\n\nتاریخ مناسبت‌های قمری این سال تقریبی است و ممکن است یک روز جابه‌جا شود."
-        desc += "\n\n" + signature
+        desc += "\n\n" + date_desc + "\n\n" + signature
         alarms = []
         if holiday:
             alarms.append(alarm("-PT4H", "فردا تعطیل رسمی است: " + "، ".join(holiday)))
