@@ -485,15 +485,112 @@ function buildWidget(date, battery, vpn, family) {
   return widget;
 }
 
+// ---------- صفحه‌ی انیمیشنی (با زدن روی ویجت) ----------
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+// A full-screen page: a big battery with a waving liquid, rising bubbles while charging,
+// the percentage counting up, and the date and VPN status below
+function animationHTML(date, battery, vpn) {
+  const dot = { on: "#30d158", off: "#ff453a", offline: "#ff9f0a" }[vpn.state];
+  const bubbles = battery.charging
+    ? Array.from({ length: 14 }, (_, i) => {
+      const size = 6 + (i * 7) % 14;
+      return `<i class="bubble" style="left:${(i * 37) % 86 + 5}%;width:${size}px;height:${size}px;`
+        + `animation-delay:${(i * 0.43) % 3}s;animation-duration:${2.4 + (i % 5) * 0.5}s"></i>`;
+    }).join("")
+    : "";
+  return `<!doctype html><html dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;font-family:-apple-system,system-ui;color:#fff;overflow:hidden;
+ background:radial-gradient(circle at 30% 20%,#4a3d8f,#1d1a3d 55%,#0d0c1d);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:40px 20px}
+.battery{position:relative;width:170px;height:300px;border-radius:38px;border:6px solid rgba(255,255,255,.55);
+ padding:9px;box-shadow:0 0 60px ${battery.color}55;animation:pulse 2.6s ease-in-out infinite}
+.battery:before{content:"";position:absolute;top:-22px;left:50%;transform:translateX(-50%);
+ width:56px;height:14px;border-radius:7px 7px 0 0;background:rgba(255,255,255,.55)}
+.tank{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:rgba(255,255,255,.07)}
+.liquid{position:absolute;left:0;right:0;bottom:0;height:0;background:${battery.color};
+ transition:height 1.8s cubic-bezier(.2,.8,.2,1)}
+.wave{position:absolute;left:0;width:200%;height:26px;top:-24px;animation:wave 3s linear infinite}
+.wave.back{opacity:.45;animation-duration:5s;animation-direction:reverse;top:-20px}
+.wave path{fill:${battery.color}}
+.gloss{position:absolute;inset:0;border-radius:28px;
+ background:linear-gradient(90deg,rgba(255,255,255,.22),rgba(255,255,255,0) 35%,rgba(255,255,255,0) 70%,rgba(255,255,255,.12))}
+.bubble{position:absolute;bottom:-20px;border-radius:50%;background:rgba(255,255,255,.55);animation:rise linear infinite}
+.label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.percent{font-size:64px;font-weight:800;letter-spacing:-1px}
+.bolt{font-size:34px;animation:blink 1.4s ease-in-out infinite}
+.date{text-align:center}
+.weekday{font-size:20px;font-weight:700;color:${date.holiday ? "#ff7a7a" : "#fff"}}
+.day{font-size:72px;font-weight:800;line-height:1.05;color:${date.holiday ? "#ff7a7a" : "#fff"}}
+.month{font-size:18px;opacity:.7}
+.occasion{margin-top:8px;font-size:16px;font-weight:600}
+.pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.pill{background:rgba(255,255,255,.14);border-radius:14px;padding:7px 14px;font-size:15px;font-weight:600;
+ display:flex;align-items:center;gap:8px;backdrop-filter:blur(10px)}
+.pill i{width:9px;height:9px;border-radius:50%}
+.sign{position:fixed;bottom:22px;font-size:11px;opacity:.45}
+@keyframes wave{to{transform:translateX(-50%)}}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-300px);opacity:0}}
+@keyframes blink{50%{opacity:.35;transform:scale(.85)}}
+@keyframes pulse{50%{box-shadow:0 0 90px ${battery.color}88}}
+</style></head><body>
+<div class="battery"><div class="tank">
+ <div class="liquid" id="liquid">
+  <svg class="wave back" viewBox="0 0 400 26" preserveAspectRatio="none"><path d="M0 13 Q50 0 100 13 T200 13 T300 13 T400 13 V26 H0Z"/></svg>
+  <svg class="wave" viewBox="0 0 400 26" preserveAspectRatio="none"><path d="M0 13 Q50 26 100 13 T200 13 T300 13 T400 13 V26 H0Z"/></svg>
+ </div>
+ ${bubbles}<div class="gloss"></div>
+ <div class="label"><div class="percent" id="percent">۰٪</div>${battery.charging ? '<div class="bolt">⚡</div>' : ""}</div>
+</div></div>
+<div class="date">
+ <div class="weekday">${escapeHtml(date.weekday)}</div>
+ <div class="day">${escapeHtml(date.day)}</div>
+ <div class="month">${escapeHtml(date.month)} ${escapeHtml(date.year)}</div>
+ ${date.occasion ? `<div class="occasion">${escapeHtml(date.occasion)}</div>` : ""}
+</div>
+<div class="pills">
+ <div class="pill"><i style="background:${dot}"></i>${escapeHtml(vpn.long)}</div>
+ <div class="pill">🔋 ${escapeHtml(battery.hint)}</div>
+</div>
+<div class="sign">ساخته شده توسط طلایی</div>
+<script>
+const level = ${battery.level};
+const fa = (n) => String(n).replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+setTimeout(() => { document.getElementById("liquid").style.height = level + "%"; }, 150);
+const started = performance.now();
+(function count(now) {
+  const t = Math.min(1, (now - started) / 1600);
+  const eased = 1 - Math.pow(1 - t, 3);
+  document.getElementById("percent").textContent = fa(Math.round(level * eased)) + "٪";
+  if (t < 1) requestAnimationFrame(count);
+})(started);
+</script></body></html>`;
+}
+
 async function main() {
   const today = new Date();
   const [days, result] = await Promise.all([loadCalendar(), lookup()]);
-  const widget = buildWidget(describeDate(days, today), describeBattery(), describeVpn(result),
-    config.widgetFamily || "medium");
-  // Ask for a redraw after a minute; iOS decides the real moment from its daily budget
-  widget.refreshAfterDate = new Date(Date.now() + 60 * 1000);
-  if (config.runsInWidget) Script.setWidget(widget);
-  else await widget.presentMedium();
+  const date = describeDate(days, today);
+  const battery = describeBattery();
+  const vpn = describeVpn(result);
+  if (config.runsInWidget) {
+    const widget = buildWidget(date, battery, vpn, config.widgetFamily || "medium");
+    // Ask for a redraw after a minute; iOS decides the real moment from its daily budget
+    widget.refreshAfterDate = new Date(Date.now() + 60 * 1000);
+    Script.setWidget(widget);
+  } else {
+    // Opened from the widget or the app: the animated full-screen page
+    const page = new WebView();
+    await page.loadHTML(animationHTML(date, battery, vpn));
+    await page.present(true);
+  }
   Script.complete();
 }
 
