@@ -11,7 +11,7 @@ import os
 import re
 import sys
 
-AUTHOR = "محراب طلایی"
+AUTHOR = "طلایی"
 UID_DOMAIN = "mehrab-talaei"
 DTSTAMP = "20261016T000000Z"
 LAST_SOURCE_YEAR = 1407  # the source ends with this Jalali year; the next one is derived
