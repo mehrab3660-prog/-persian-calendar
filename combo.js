@@ -196,16 +196,28 @@ async function lookup() {
 }
 
 
+// The network name: a known Iranian operator, else the first words of the ISP name
+function networkName(org) {
+  const known = operatorName(org);
+  if (known) return known;
+  const name = (org || "").replace(/^AS\d+\s*/, "").split(/[ ,]+/).slice(0, 2).join(" ");
+  return name || null;
+}
+
 function describeVpn(result) {
-  if (!result) return { state: "offline", title: "بدون اینترنت", dot: "🟠", short: "قطع", place: "" };
+  if (!result) {
+    return { state: "offline", title: "بدون اینترنت", dot: "🟠", short: "بدون اینترنت", long: "بدون اینترنت" };
+  }
   const vpn = result.code !== HOME_COUNTRY;
+  const where = `${flag(result.code)} ${countryName(result.code)}`;
+  // VPN on: the country (and city) of the VPN server; off: the Iranian network in use
+  const via = vpn ? result.city : networkName(result.org);
   return {
     state: vpn ? "on" : "off",
-    title: vpn ? "VPN روشن" : "VPN خاموش",
+    title: vpn ? "VPN وصل" : "VPN قطع",
     dot: vpn ? "🟢" : "🔴",
-    short: vpn ? "روشن" : "خاموش",
-    flag: flag(result.code),
-    place: [countryName(result.code), !vpn ? operatorName(result.org) : null].filter(Boolean).join(" · "),
+    short: vpn ? `وصل · ${where}` : `قطع · ${via || where}`,
+    long: `${vpn ? "VPN وصل" : "VPN قطع"} · ${where}${via ? "، " + via : ""}`,
     ip: result.ip || "",
     ping: result.ping,
   };
@@ -307,14 +319,12 @@ function background(widget, holiday) {
 function buildWidget(date, battery, vpn, family) {
   const vpnDot = new Color({ on: "#30d158", off: "#ff453a", offline: "#ff9f0a" }[vpn.state]);
   const dayColor = date.holiday ? CORAL : WHITE;
-  const vpnPlace = vpn.state === "on" ? (vpn.place || "").split(" · ")[0] : "";
-  const vpnLabel = vpn.state === "offline" ? "بدون اینترنت" : `${vpn.title}${vpnPlace ? " · " + vpnPlace : ""}`;
 
   const widget = new ListWidget();
   widget.url = `scriptable:///run/${encodeURIComponent(Script.name())}`;
 
   if (family === "accessoryInline") {
-    widget.addText(`${date.day} ${date.month} · 🔋${battery.text} · ${vpn.dot} VPN`);
+    widget.addText(`${date.day} ${date.month} · 🔋${battery.text} · ${vpn.dot} ${vpn.short}`);
     return widget;
   }
   if (family === "accessoryCircular") {
@@ -326,7 +336,7 @@ function buildWidget(date, battery, vpn, family) {
   if (family === "accessoryRectangular") {
     addLine(widget, `${date.weekday} ${date.day} ${date.month}`, 15, WHITE, true);
     addLine(widget, `🔋 ${battery.text}${battery.charging ? " ⚡" : ""}`, 12, WHITE);
-    addLine(widget, `${vpn.dot} ${vpn.title}`, 12, WHITE);
+    addLine(widget, `${vpn.dot} ${vpn.short}`, 12, WHITE);
     return widget;
   }
 
@@ -352,7 +362,7 @@ function buildWidget(date, battery, vpn, family) {
     widget.addSpacer();
     const bottom = widget.addStack();
     bottom.addSpacer();
-    pill(bottom, vpn.state === "on" ? "VPN روشن" : vpn.state === "off" ? "VPN خاموش" : "آفلاین", vpnDot);
+    pill(bottom, vpn.short, vpnDot);
     bottom.addSpacer();
     return widget;
   }
@@ -398,7 +408,7 @@ function buildWidget(date, battery, vpn, family) {
     pill(bottom, date.next.inDays === 1 ? "فردا تعطیل" : `${fa(date.next.inDays)} روز تا تعطیلی`, CORAL);
   }
   bottom.addSpacer();
-  pill(bottom, vpnLabel, vpnDot);
+  pill(bottom, vpn.long, vpnDot);
 
   if (large) {
     widget.addSpacer(12);
