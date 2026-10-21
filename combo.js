@@ -826,9 +826,13 @@ function batteryImage(fraction, color, label, width, height) {
 // ---------- ویجت ----------
 
 const WHITE = new Color("#ffffff");
-const SOFT = new Color("#ffffff", 0.7);
 const FAINT = new Color("#ffffff", 0.16);
-const CORAL = new Color("#ff7a7a");
+// Home-screen colours follow the iPhone appearance. The dark variant is the
+// original white-on-purple look; DrawContext cannot take these (no dynamic colours).
+const INK = Color.dynamic(new Color("#1c1c1e"), new Color("#ffffff"));
+const SOFT_INK = Color.dynamic(new Color("#3a3a3c"), new Color("#ffffff", 0.7));
+const FAINT_BG = Color.dynamic(new Color("#000000", 0.08), new Color("#ffffff", 0.16));
+const CORAL_INK = Color.dynamic(new Color("#d70015"), new Color("#ff7a7a"));
 
 function addLine(stack, text, size, color, bold = false) {
   const line = stack.addText(text);
@@ -842,7 +846,7 @@ function addLine(stack, text, size, color, bold = false) {
 // A rounded capsule with a coloured dot and a label
 function pill(stack, label, dotColor) {
   const capsule = stack.addStack();
-  capsule.backgroundColor = FAINT;
+  capsule.backgroundColor = FAINT_BG;
   capsule.cornerRadius = 10;
   capsule.setPadding(4, 9, 4, 9);
   capsule.centerAlignContent();
@@ -853,24 +857,41 @@ function pill(stack, label, dotColor) {
     dot.backgroundColor = dotColor;
     capsule.addSpacer(5);
   }
-  addLine(capsule, label, 11, WHITE, true);
+  addLine(capsule, label, 11, INK, true);
   return capsule;
 }
 
 function background(widget, holiday) {
   const gradient = new LinearGradient();
-  gradient.colors = holiday
+  const dark = holiday
     ? [new Color("#5b2a6e"), new Color("#2a1638")]
     : [new Color("#4a3d8f"), new Color("#1d1a3d")];
+  const light = holiday
+    ? [new Color("#fff1f2"), new Color("#ffe4e6")]
+    : [new Color("#f3f0ff"), new Color("#ffffff")];
+  gradient.colors = [Color.dynamic(light[0], dark[0]), Color.dynamic(light[1], dark[1])];
   gradient.locations = [0, 1];
   gradient.startPoint = new Point(1, 0);
   gradient.endPoint = new Point(0, 1);
   widget.backgroundGradient = gradient;
 }
 
+// Battery art is white and baked in DrawContext, which ignores Color.dynamic.
+// Light mode puts that art on the original purple; dark mode leaves the plate clear.
+function placeBattery(parent, image, size) {
+  const plate = parent.addStack();
+  plate.cornerRadius = 8;
+  plate.backgroundColor = Color.dynamic(new Color("#4a3d8f"), new Color("#000000", 0));
+  const icon = plate.addImage(image);
+  icon.imageSize = size;
+  return icon;
+}
+
 function buildWidget(date, battery, vpn, family) {
-  const vpnDot = new Color({ on: "#30d158", off: "#ff453a", offline: "#ff9f0a", unknown: "#aeaeb2" }[vpn.state]);
-  const dayColor = date.holiday ? CORAL : WHITE;
+  const dotDark = { on: "#30d158", off: "#ff453a", offline: "#ff9f0a", unknown: "#aeaeb2" };
+  const dotLight = { on: "#248a3d", off: "#d70015", offline: "#c93400", unknown: "#636366" };
+  const vpnDot = Color.dynamic(new Color(dotLight[vpn.state]), new Color(dotDark[vpn.state]));
+  const dayColor = date.holiday ? CORAL_INK : INK;
 
   const widget = new ListWidget();
   widget.url = `scriptable:///run/${encodeURIComponent(Script.name())}`;
@@ -900,20 +921,19 @@ function buildWidget(date, battery, vpn, family) {
     top.centerAlignContent();
     const batteryStack = top.addStack();
     batteryStack.layoutVertically();
-    const icon = batteryStack.addImage(batteryImage(battery.level / 100, battery.color, "", 88, 42));
-    icon.imageSize = new Size(44, 21);
-    addLine(batteryStack, `${battery.charging ? "⚡" : ""}${battery.text}`, 12, WHITE, true);
+    placeBattery(batteryStack, batteryImage(battery.level / 100, battery.color, "", 88, 42), new Size(44, 21));
+    addLine(batteryStack, `${battery.charging ? "⚡" : ""}${battery.text}`, 12, INK, true);
     top.addSpacer();
     const titles = top.addStack();
     titles.layoutVertically();
     addLine(titles, date.weekday, 14, dayColor, true).rightAlignText();
-    addLine(titles, `${date.month} ${date.year}`, 11, SOFT).rightAlignText();
+    addLine(titles, `${date.month} ${date.year}`, 11, SOFT_INK).rightAlignText();
     widget.addSpacer();
     const dayRow = widget.addStack();
     dayRow.addSpacer();
     addLine(dayRow, date.day, 50, dayColor, true);
     dayRow.addSpacer();
-    if (date.occasion) addLine(widget, date.occasion, 10, date.occasionHoliday ? CORAL : SOFT).centerAlignText();
+    if (date.occasion) addLine(widget, date.occasion, 10, date.occasionHoliday ? CORAL_INK : SOFT_INK).centerAlignText();
     widget.addSpacer();
     const bottom = widget.addStack();
     bottom.addSpacer();
@@ -932,13 +952,13 @@ function buildWidget(date, battery, vpn, family) {
   left.centerAlignContent();
   const iconWidth = large ? 130 : 110;
   const iconHeight = Math.round(iconWidth * 0.46);
-  const icon = left.addImage(batteryImage(battery.level / 100, battery.color,
-    `${battery.charging ? "⚡" : ""}${battery.text}`, iconWidth * 2, iconHeight * 2));
-  icon.imageSize = new Size(iconWidth, iconHeight);
+  placeBattery(left, batteryImage(battery.level / 100, battery.color,
+    `${battery.charging ? "⚡" : ""}${battery.text}`, iconWidth * 2, iconHeight * 2),
+    new Size(iconWidth, iconHeight));
   left.addSpacer(6);
   const hint = left.addStack();
   hint.size = new Size(iconWidth, 0);
-  addLine(hint, battery.hint, 10, battery.level <= 20 && !battery.charging ? CORAL : SOFT).centerAlignText();
+  addLine(hint, battery.hint, 10, battery.level <= 20 && !battery.charging ? CORAL_INK : SOFT_INK).centerAlignText();
   row.addSpacer();
   const right = row.addStack();
   right.layoutVertically();
@@ -950,29 +970,29 @@ function buildWidget(date, battery, vpn, family) {
   addLine(dayRow, date.day, large ? 64 : 50, dayColor, true);
   const monthRow = right.addStack();
   monthRow.addSpacer();
-  addLine(monthRow, `${date.month} ${date.year}`, 13, SOFT);
+  addLine(monthRow, `${date.month} ${date.year}`, 13, SOFT_INK);
   if (date.occasion) {
     right.addSpacer(3);
     const occasionRow = right.addStack();
     occasionRow.addSpacer();
-    addLine(occasionRow, date.occasion, 12, date.occasionHoliday ? CORAL : WHITE, true);
+    addLine(occasionRow, date.occasion, 12, date.occasionHoliday ? CORAL_INK : INK, true);
   }
 
   widget.addSpacer(large ? 16 : 8);
   const bottom = widget.addStack();
   bottom.centerAlignContent();
   if (date.next) {
-    pill(bottom, date.next.inDays === 1 ? "فردا تعطیل" : `${fa(date.next.inDays)} روز تا تعطیلی`, CORAL);
+    pill(bottom, date.next.inDays === 1 ? "فردا تعطیل" : `${fa(date.next.inDays)} روز تا تعطیلی`, CORAL_INK);
   }
   bottom.addSpacer();
   pill(bottom, vpn.long, vpnDot);
 
   if (large) {
     widget.addSpacer(12);
-    if (date.next) addLine(widget, `تعطیلی بعد: ${date.next.title}`, 12, SOFT).rightAlignText();
-    if (vpn.ip) addLine(widget, `IP: ${vpn.ip}${vpn.ping != null ? " · " + fa(vpn.ping) + "ms" : ""}`, 11, SOFT).rightAlignText();
+    if (date.next) addLine(widget, `تعطیلی بعد: ${date.next.title}`, 12, SOFT_INK).rightAlignText();
+    if (vpn.ip) addLine(widget, `IP: ${vpn.ip}${vpn.ping != null ? " · " + fa(vpn.ping) + "ms" : ""}`, 11, SOFT_INK).rightAlignText();
     widget.addSpacer();
-    addLine(widget, "ساخته شده توسط طلایی", 8, SOFT).centerAlignText();
+    addLine(widget, "ساخته شده توسط طلایی", 8, SOFT_INK).centerAlignText();
   }
   return widget;
 }
