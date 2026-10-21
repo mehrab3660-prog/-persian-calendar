@@ -8,14 +8,18 @@
 // A country other than Iran is not enough to say the VPN is on. Cloudflare's
 // loc field is the datacenter, not the phone; a failed lookup must not become
 // "on"; and a normal foreign ISP is not a VPN. "On" needs a tunnel flag
-// (VPN, proxy, Tor, WARP), a datacenter/hosting flag outside Iran, a known
-// VPN network name, or two geo sources agreeing on a foreign country while a
-// site that is usually blocked in Iran actually loads. Otherwise: unknown.
+// (VPN, proxy, Tor, WARP), a datacenter/hosting flag outside Iran, or a known
+// VPN network name. Otherwise: unknown.
+//
+// A refresh does not ask every service. The usual check is two HTTPS calls
+// (an IP/WARP trace, then one flag lookup for that IP) and stops. Fallbacks
+// run only when those two produce nothing usable.
 
 const HOME_COUNTRY = "IR";
 const VPN_CACHE_FILE = "vpn-status.json";
 const VPN_CACHE_MS = 15 * 60 * 1000;
-const LOOKUP_TIMEOUT = 4;
+const FRESH_MS = 2 * 60 * 1000;
+const LOOKUP_TIMEOUT = 1.5;
 
 const REASON = {
   failed: "خطا در بررسی",
@@ -208,19 +212,12 @@ function parseProxycheck(ip, j) {
   };
 }
 
-const SERVICES = [
-  { url: "https://ipwho.is/", parse: parseIpwho },
-  { url: "https://ipapi.co/json/", parse: parseIpapiCo },
-  { url: "https://ifconfig.co/json", parse: parseIfconfig },
-  { url: "https://api.country.is/", parse: parseCountryIs },
-  { url: "https://get.geojs.io/v1/ip/geo.json", parse: parseGeojs },
-  { url: "https://api.ip.sb/geoip", parse: parseIpSb },
-  {
-    url: "http://ip-api.com/json/?fields=status,countryCode,city,isp,org,as,proxy,hosting,query",
-    parse: parseIpApi,
-  },
-  { url: "https://1.1.1.1/cdn-cgi/trace", text: true, parse: parseTrace },
-];
+// Asked in order. Later ones run only if the earlier ones did not already decide.
+const TRACE_SERVICE = { url: "https://1.1.1.1/cdn-cgi/trace", text: true, parse: parseTrace };
+const FLAG_FALLBACK = {
+  url: "http://ip-api.com/json/?fields=status,countryCode,city,isp,org,as,proxy,hosting,query",
+  parse: parseIpApi,
+};
 
 function commonIp(list) {
   const counts = {};
@@ -397,10 +394,10 @@ function judge(reports, probes) {
   return pack("unknown", { ip: commonIp(list) }, REASON.failed, true);
 }
 
-async function ask(service) {
+async function ask(service, timeout) {
   try {
     const request = new Request(service.url);
-    request.timeoutInterval = LOOKUP_TIMEOUT;
+    request.timeoutInterval = timeout || LOOKUP_TIMEOUT;
     request.headers = {
       "User-Agent": "Mozilla/5.0",
       "Accept": service.text ? "text/plain" : "application/json",
@@ -421,10 +418,10 @@ async function ask(service) {
   }
 }
 
-async function probeUrl(url) {
+async function probeUrl(url, timeout) {
   try {
     const request = new Request(url);
-    request.timeoutInterval = LOOKUP_TIMEOUT;
+    request.timeoutInterval = timeout || 1;
     request.headers = { "User-Agent": "Mozilla/5.0" };
     const body = await request.loadString();
     const status = request.response && request.response.statusCode;
@@ -439,59 +436,51 @@ async function probeUrl(url) {
   }
 }
 
-function probeNetwork() {
-  return Promise.all([
-    probeUrl("https://connectivitycheck.gstatic.com/generate_204"),
-    probeUrl("https://www.youtube.com/generate_204"),
-  ]).then((answers) => ({ online: answers[0] === true, siteOpen: answers[1] }));
-}
-
-async function loadJson(url) {
-  const request = new Request(url);
-  request.timeoutInterval = LOOKUP_TIMEOUT;
-  request.headers = { "User-Agent": "Mozilla/5.0", "Accept": "application/json" };
-  const started = Date.now();
-  const body = await request.loadJSON();
-  return { body: body, ping: Date.now() - started };
-}
-
-// ipquery.io is keyless and reports vpn/proxy/tor/datacenter. proxycheck.io is the fallback.
-async function riskForIp(ip) {
+// ipquery.io is keyless and reports vpn, proxy, tor, and datacenter for one IP.
+async function askIpquery(ip, timeout) {
   try {
-    const loaded = await loadJson("https://api.ipquery.io/" + encodeURIComponent(ip));
-    const parsed = parseIpquery(loaded.body);
-    if (!parsed) throw new Error("no ipquery");
-    parsed.ping = loaded.ping;
+    const request = new Request("https://api.ipquery.io/" + encodeURIComponent(ip));
+    request.timeoutInterval = timeout || LOOKUP_TIMEOUT;
+    request.headers = { "User-Agent": "Mozilla/5.0", "Accept": "application/json" };
+    const started = Date.now();
+    const parsed = parseIpquery(await request.loadJSON());
+    if (!parsed) return null;
+    parsed.ping = Date.now() - started;
     return parsed;
   } catch (e) {
-    try {
-      const loaded = await loadJson("https://proxycheck.io/v2/" + encodeURIComponent(ip) + "?vpn=1&asn=1");
-      const parsed = parseProxycheck(ip, loaded.body);
-      if (!parsed) return null;
-      parsed.ping = loaded.ping;
-      return parsed;
-    } catch (e2) {
-      return null;
-    }
+    return null;
   }
 }
 
+function withReports(reports, probes) {
+  return judge(reports, probes || { online: reports.length > 0, siteOpen: null });
+}
+
+// Two calls cover the normal cases. Nothing after them is started once they decide.
 async function lookup() {
-  const probesPromise = probeNetwork();
   const reports = [];
-  await Promise.all(SERVICES.map(async (service) => {
-    const result = await ask(service);
-    if (result) reports.push(result);
-  }));
-  const ip = commonIp(reports);
-  if (ip) {
-    const extra = await riskForIp(ip);
-    if (extra) reports.push(extra);
+  const trace = await ask(TRACE_SERVICE, LOOKUP_TIMEOUT);
+  if (trace) reports.push(trace);
+  if (trace && trace.warp) return withReports(reports);
+
+  if (trace && trace.ip) {
+    const risk = await askIpquery(trace.ip, LOOKUP_TIMEOUT);
+    if (risk) reports.push(risk);
+    if (risk && risk.code) return withReports(reports);
   }
-  return judge(reports, await probesPromise);
+
+  // Trace or the flag service failed. One fallback that carries country and flags.
+  if (!reports.some((report) => report.code)) {
+    const backup = await ask(FLAG_FALLBACK, 1.2);
+    if (backup) reports.push(backup);
+    if (backup && backup.code) return withReports(reports);
+    const online = await probeUrl("https://connectivitycheck.gstatic.com/generate_204", 1);
+    return judge(reports, { online: online === true, siteOpen: null });
+  }
+  return withReports(reports);
 }
 
-function readVpnCache(fm, path) {
+function readVpnCache(fm, path, maxAge) {
   try {
     if (!fm.fileExists(path)) return null;
     const saved = JSON.parse(fm.readString(path));
@@ -500,7 +489,8 @@ function readVpnCache(fm, path) {
     const checked = Date.parse(saved.checkedAt);
     if (!isFinite(checked)) return null;
     const age = Date.now() - checked;
-    if (age >= VPN_CACHE_MS || age < 0) return null;
+    const limit = typeof maxAge === "number" ? maxAge : VPN_CACHE_MS;
+    if (age >= limit || age < 0) return null;
     return saved;
   } catch (e) {
     return null;
@@ -556,6 +546,29 @@ function settleVpnStatus(fm, status) {
     }
   }
   return { status: status, checkedAt: now, cached: false };
+}
+
+// Background widget refreshes reuse an on/off answer from the last two minutes
+// and do not touch the network. Opening the script by hand always checks.
+function freshWidgetCache(fm) {
+  if (typeof config === "undefined" || !config.runsInWidget) return null;
+  const path = fm.joinPath(fm.documentsDirectory(), VPN_CACHE_FILE);
+  const saved = readVpnCache(fm, path, FRESH_MS);
+  if (!saved) return null;
+  return {
+    status: {
+      state: saved.status.state,
+      ip: saved.status.ip || "",
+      code: saved.status.code || "",
+      city: saved.status.city || "",
+      org: saved.status.org || "",
+      ping: typeof saved.status.ping === "number" ? saved.status.ping : null,
+      reason: saved.status.reason || "",
+      failed: false,
+    },
+    checkedAt: new Date(saved.checkedAt),
+    cached: true,
+  };
 }
 // </vpn-detect>
 
@@ -703,7 +716,8 @@ function buildWidget(info, family) {
 
 async function main() {
   const fm = FileManager.local();
-  const settled = settleVpnStatus(fm, await lookup());
+  const fresh = freshWidgetCache(fm);
+  const settled = fresh ? fresh : settleVpnStatus(fm, await lookup());
   const widget = buildWidget(describe(settled.status, settled.checkedAt, settled.cached), config.widgetFamily || "medium");
   if (config.runsInWidget) Script.setWidget(widget);
   else await widget.presentMedium();
